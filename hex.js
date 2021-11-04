@@ -15,6 +15,8 @@ btn.addEventListener("click", ()=>{
     }
     color.textContent = hexColor
     document.body.style.backgroundColor = hexColor;
+    navBar.style.backgroundColor = rColor();
+    clockEl.style.color = rColor();
     
 
 })
@@ -22,7 +24,8 @@ btn.addEventListener("click", ()=>{
 function randomColor() {
     return Math.floor(Math.random()*hex.length);
 }
-
+let rNumber = () => Math.floor(Math.random()*256);
+let rColor = () => `rgb(${rNumber()},${rNumber()},${rNumber()})`;
 
 
 
