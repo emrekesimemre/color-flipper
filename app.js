@@ -1,7 +1,9 @@
 const colors = ["Green", "Red", "rgba(133,122,200)", "#f15025"];
 const color = document.querySelector(".color");
 let buton = document.querySelector("#btn");
-console.log(buton)
+
+let navBar = document.querySelector(".nav-bar");
+
 
 // let randomNumber = () => Math.floor(Math.random()*256)
 // let randomColor = () => `rgb(${randomNumber()},${randomNumber()},${randomNumber()})`
@@ -14,12 +16,17 @@ buton.addEventListener("click", ()=>{
     let randomNumber = getRandomNumber();
     document.body.style.backgroundColor = colors[randomNumber];
     color.textContent = colors[randomNumber];
+    navBar.style.backgroundColor = rColor();
+    clockEl.style.color = rColor();
     
 })
 
 function getRandomNumber() {
     return Math.floor(Math.random()*colors.length);
 }
+let rNumber = () => Math.floor(Math.random()*256);
+let rColor = () => `rgb(${rNumber()},${rNumber()},${rNumber()})`;
+
 
 let hourEl = document.querySelector(".hour");
 let minuteEl = document.querySelector(".minute");
